@@ -1,17 +1,26 @@
 server:
-  port: 9090
+  port: 8885
 spring:
   application:
     name: gateway
   profiles:
-    active: local
+    active: gateway-local
   cloud:
     config:
-      fail-fast: true
+      enabled: true
+#      uri: http://localhost:8887/
       discovery:
+        enabled: true
         service-id: discovery
+      fail-fast: true
+    gateway:
+      routes:
+        - id: temp
+          uri: ""
+
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/
+    enabled: true

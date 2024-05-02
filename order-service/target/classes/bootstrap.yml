@@ -2,17 +2,15 @@ server:
   port: 0
 spring:
   cloud:
-    enabled: true
-    uri: http://localhost:8888/
-    discovery:
+    config:
       enabled: true
-      service-id: discovery
+#      uri: http://localhost:8888
+      discovery:
+        service-id: discovery
   application:
     name: order-service
   profiles:
     active: order-service-local
-
-
 
 eureka:
   client:
