@@ -1,19 +1,36 @@
+#server:
+#  port: 0
+#spring:
+#  cloud:
+#    config:
+#      enabled: true
+#      #      uri: http://localhost:8888
+#      discovery:
+#        service-id: discovery
+#  application:
+#    name: order-service
+#  profiles:
+#    active: local
+#
+#eureka:
+#  client:
+#    enabled: true
+#    service-url:
+#      defaultZone: "http://localhost:8888/eureka"
 server:
   port: 0
 spring:
-  cloud:
-    config:
-      enabled: true
-#      uri: http://localhost:8888
-      discovery:
-        service-id: discovery
   application:
     name: order-service
   profiles:
-    active: order-service-local
-
+    active: local
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: discovery
 eureka:
   client:
     enabled: true
     service-url:
-      defaultZone: "http://localhost:8888/eureka"
+      defaultZone: http://localhost:8888/eureka/
