@@ -27,6 +27,8 @@ spring:
   cloud:
     config:
       fail-fast: true
+      enabled: true
+      uri: http://localhost:8888
       discovery:
         service-id: discovery
 eureka:

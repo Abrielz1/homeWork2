@@ -5,8 +5,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.4.2</version>-->
+		<!--		<version>3.3.0</version>
+                 <!- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>ru.skillbox</groupId>
 	<artifactId>discovery</artifactId>
@@ -14,7 +16,7 @@
 	<name>discovery</name>
 	<description>Educational project for Spring Cloud</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -26,10 +28,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<version>4.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
+			<version>4.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
