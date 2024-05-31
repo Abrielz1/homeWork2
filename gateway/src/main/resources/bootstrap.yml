@@ -11,7 +11,7 @@ spring:
        - id: order-service
          uri: lb://order-service
          predicates:
-           - Path=/skillbox/api/order/**
+          - Path=/skillbox/api/order/**
          filters:
           - RewritePath=/skillbox(?<segment>/?.*), $\{segment}
 
