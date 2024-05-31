@@ -1,0 +1,26 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: local
+  cloud:
+    gateway:
+      routes:
+       - id: order-service
+         uri: lb://order-service
+         predicates:
+           - Path=/skillbox/api/order/**
+         filters:
+          - RewritePath=/skillbox(?<segment>/?.*), $\{segment}
+
+    config:
+      fail-fast: true
+      discovery:
+        service-id: discovery
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
