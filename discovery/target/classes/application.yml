@@ -9,14 +9,15 @@ spring:
         native:
           searchLocations: file:./config/
 
-
 eureka:
   dashboard:
     path: /dashboard/
     enabled: true
   client:
+    registerWithEureka: false
+    fetchRegistry: false
     enabled: true
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/
-#server:
-#  port: 8888
+server:
+  port: 8888
